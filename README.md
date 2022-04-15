@@ -1,4 +1,4 @@
-# javascript_challenges
+# Javascript_challenges
 
 > The repository contains most of the challenges I solve during the mob programming sessions in microverse and on my own free time. It acts a s a remainder and reference point while learning.
 
