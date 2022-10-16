@@ -9,3 +9,10 @@
 // List manipulation methods include:
 // size, head, addLast(push), addFirst(unShift), addAt(insert), removeFirst(shift), 
 // remove(pop), removeAt, indexOf, isEmpty, elementAt, findMiddle, get, clean, rotateListRight
+
+class Node {
+  constructor(data) {
+    this.data = data
+    this.next = null
+  }
+}
