@@ -16,3 +16,17 @@ class Node {
     this.next = null
   }
 }
+
+class LinkedList {
+  constructor (listOfValues) {
+    this.headNode = null
+    this.tailNode = null
+    this.length = 0
+  }
+
+  if (listOfValues instanceof Array) {
+    for(const value of listOfValues){
+      this.addLast(value)
+    }
+  }
+}
