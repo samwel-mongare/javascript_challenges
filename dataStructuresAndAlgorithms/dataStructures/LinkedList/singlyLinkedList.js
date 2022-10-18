@@ -30,3 +30,8 @@ class LinkedList {
     }
   }
 }
+
+// initiates the currentNode and currentIndex and return as an object
+initiateNodeAndIndex () {
+  return { currentNode: this.headNode, currenIndex: 0}
+}
