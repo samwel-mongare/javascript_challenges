@@ -19,11 +19,10 @@ class Node {
 
 class LinkedList {
   constructor (listOfValues) {
-    this.headNode = null
-    this.tailNode = null
-    this.length = 0
-  }
-
+    this.headNode = null;
+    this.tailNode = null;
+    this.length = 0;
+  
   if (listOfValues instanceof Array) {
     for(const value of listOfValues){
       this.addLast(value)
@@ -32,6 +31,12 @@ class LinkedList {
 }
 
 // initiates the currentNode and currentIndex and return as an object
-initiateNodeAndIndex () {
-  return { currentNode: this.headNode, currenIndex: 0}
+  initiateNodeAndIndex() {
+    return { currentNode: this.headNode, currenIndex: 0}
+  }
+
+  size () {
+    return this.length;
+  }
 }
+
