@@ -38,5 +38,13 @@ class LinkedList {
   size () {
     return this.length;
   }
+
+  head() {
+    return this.headNode?.data || null;
+  }
+
+  tail() {
+    return this.tailNode?.data || null;
+  }
 }
 
