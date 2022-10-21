@@ -46,5 +46,9 @@ class LinkedList {
   tail() {
     return this.tailNode?.data || null;
   }
+
+  isEmpty() {
+    return this.length === 0;
+  }
 }
 
