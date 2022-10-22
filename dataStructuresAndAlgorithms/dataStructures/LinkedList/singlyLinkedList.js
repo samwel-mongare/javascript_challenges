@@ -50,5 +50,18 @@ class LinkedList {
   isEmpty() {
     return this.length === 0;
   }
+
+  addFirst(element) {
+    const node = new Node(element)
+
+    if(this.headNode === null) {
+      this.tailNode = node;
+    }
+
+    node.next = this.headNode;
+    this.headNode = node;
+    this.length++;
+    return this.size();
+  }
 }
 
