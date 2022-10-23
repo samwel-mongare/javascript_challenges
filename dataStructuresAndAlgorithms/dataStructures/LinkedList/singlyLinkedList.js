@@ -63,5 +63,20 @@ class LinkedList {
     this.length++;
     return this.size();
   }
+
+  // Remove the first item from the list(shift)
+  removeFirst() {
+    if(this.headNode === null) {
+      return this.size();
+    }
+    const removedNode = this.headNode;
+    this.headNode = removedNode.next;
+    this.length--;
+    
+    if(this.isEmpty){
+      this.tailNode = null;
+    }
+    return removedNode?.data;
+  }
 }
 
