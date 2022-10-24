@@ -32,7 +32,7 @@ class LinkedList {
 
 // initiates the currentNode and currentIndex and return as an object
   initiateNodeAndIndex() {
-    return { currentNode: this.headNode, currenIndex: 0}
+    return { currentNode: this.headNode, currentIndex: 0}
   }
 
   size () {
@@ -77,6 +77,20 @@ class LinkedList {
       this.tailNode = null;
     }
     return removedNode?.data;
+  }
+
+  removeLast() {
+    if(this.isEmpty) return null;
+    if(this.length === 1) return this.removeFirst();
+    const removedNode = this.tailNode;
+    let { currentNode } = this.initiateNodeAndIndex();
+    while (currentNode.next.next) {
+      currentNode = currentNode.next
+    }
+    currentNode.next = null;
+    this.tailNode = currentNode;
+    this.length--;
+    return removedNode.data;
   }
 }
 
