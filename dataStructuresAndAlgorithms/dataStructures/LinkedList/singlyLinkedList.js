@@ -92,5 +92,27 @@ class LinkedList {
     this.length--;
     return removedNode.data;
   }
-}
 
+  remove(element) {
+    if(this.isEmpty) return null;
+    let { currentNode } = this.initiateNodeAndIndex();
+    let removedNode = null;
+    if(currentNode.data === element) {
+      return this.removeFirst()
+    }
+    if(this.tailNode.data === element) {
+      return this.removeLast();
+    }
+
+    while(currentNode.next) {
+      if(currentNode.next.data === element) {
+        const removedNode = currentNode.next;
+        currentNode.next = removedNode.next;
+        this.length--;
+        return removedNode.data;
+      }
+      currentNode = currentNode.next;
+    }
+    return removedNode?.data || null;
+  }
+}
