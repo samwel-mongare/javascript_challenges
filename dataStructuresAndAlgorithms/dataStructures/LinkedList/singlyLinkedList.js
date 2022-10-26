@@ -115,4 +115,17 @@ class LinkedList {
     }
     return removedNode?.data || null;
   }
+
+  indexOf(element) {
+    if(this.isEmpty) return -1;
+    if(this.headNode.data === element) return 0;
+    if(this.tailNode.data === element) return this.length -1;
+    const { currentIndex, currentNode } = this.initiateNodeAndIndex();
+    while(currentNode.next) {
+      if(currentNode.data === element) return currentIndex;
+      currentNode = currentNode.next;
+      currentIndex++;
+    }
+    return -1;
+  }
 }
