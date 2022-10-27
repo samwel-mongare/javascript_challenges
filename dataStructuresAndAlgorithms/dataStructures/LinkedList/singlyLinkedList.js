@@ -128,4 +128,18 @@ class LinkedList {
     }
     return -1;
   }
+
+  elementAt(index) {
+    if(this.isEmpty) return null;
+    if(index >= this.length || index < 0) {
+      throw new RangeError("out of Range index");
+    }
+    let { currentNode, currentIndex } = this.initiateNodeAndIndex();
+    while(currentNode.next) {
+      if(currentIndex === index) return currentNode.data;
+      currentNode = currentNode.next;
+      currentIndex++;
+    }
+    return null;
+  }
 }
