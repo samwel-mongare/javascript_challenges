@@ -142,4 +142,28 @@ class LinkedList {
     }
     return null;
   }
+
+  addAt(element, index) {
+    if(index >= this.length || index < 0) {
+      throw new RangeError("out of Range index");
+    }
+    if(index === 0) {
+      this.addFirst(element);
+    }
+    if(index === this.length) {
+      this.addLast(element);
+    }
+    const node = new Node(element);
+    let { currentIndex, currentNode } = this.initiateNodeAndIndex();
+    while(currentIndex !== index - 1) {
+      currentIndex++;
+      currentNode = currentNode.next;
+    }
+    
+    let nextNode = currentNode.next;
+    currentNode.next = node;
+    node.next = nextNode;
+    this.length++;
+    return this.size();
+  }
 }
