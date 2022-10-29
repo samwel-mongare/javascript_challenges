@@ -166,4 +166,27 @@ class LinkedList {
     this.length++;
     return this.size();
   }
+
+  removeAt(index) {
+    if(index >= this.length || index < 0) {
+      throw new RangeError("out of Range index");
+    }
+    if(index === 0) {
+      this.removeFirst();
+    }
+    if(index === this.length - 1) {
+      this.removeLast();
+    }
+
+    let { currentIndex, currentNode } = this.initiateNodeAndIndex();
+    while(currentIndex !== index -1) {
+      currentIndex++;
+      currentNode = currentNode.next;
+    }
+    const removedNode = currentNode.next;
+    currentNode.next = removedNode.next;
+    removedNode.next = null;
+    this.length--;
+    return removedNode.data;
+  }
 }
