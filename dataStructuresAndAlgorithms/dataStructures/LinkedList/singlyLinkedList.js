@@ -191,8 +191,17 @@ class LinkedList {
   }
 
   findMiddle() {
-    if(this.isEmpty) return null;
-    const middleIndex = Math.floor(this.length/2);
-    return this.elementAt(middleIndex);
+  //   if(this.isEmpty) return null;
+  //   const middleIndex = Math.floor(this.length/2);
+  //   return this.elementAt(middleIndex);
+  // }
+    let fast = this.headNode;
+    let slow = this.headNode;
+
+    while(fast !==null && fast.next !== null) {
+      fast = fast.next.next;
+      slow = slow.next
+    }
+    return slow;
   }
 }
