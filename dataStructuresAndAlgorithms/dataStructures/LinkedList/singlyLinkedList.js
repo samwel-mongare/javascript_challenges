@@ -189,4 +189,10 @@ class LinkedList {
     this.length--;
     return removedNode.data;
   }
+
+  findMiddle() {
+    if(this.isEmpty) return null;
+    const middleIndex = Math.floor(this.length/2);
+    return this.elementAt(middleIndex);
+  }
 }
