@@ -204,4 +204,11 @@ class LinkedList {
     }
     return slow;
   }
+
+  clean() {
+    if(this.isEmpty) return null;
+    this.headNode = null;
+    this.tailNode = null;
+    this.length = 0;
+  }
 }
