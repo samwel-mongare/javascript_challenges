@@ -211,4 +211,15 @@ class LinkedList {
     this.tailNode = null;
     this.length = 0;
   }
+
+  // Returns the linked list data in an Array
+  get() {
+    const list = [];
+    let { currentNode } = this.initiateNodeAndIndex();
+    while(currentNode) {
+      list.push(currentNode.data);
+      currentNode = currentNode.next;
+    }
+    return list;
+  }
 }
