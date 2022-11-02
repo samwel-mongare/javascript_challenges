@@ -222,4 +222,17 @@ class LinkedList {
     }
     return list;
   }
+
+  iterator() {
+    let { currentNode } = this.initiateNodeAndIndex();
+    if (currentNode === null) return -1;
+
+    const iterate = function * () {
+      while (currentNode) {
+        yield currentNode.data;
+        currentNode = currentNode.next
+      }
+    }
+    return iterate;
+  }
 }
