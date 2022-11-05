@@ -34,4 +34,16 @@ function countApplesAndOranges(s, t, a, b, apples, oranges) {
       }
   }
   console.log(`${totalApples}\n${totalOranges}`)
+
+  // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Optimized solution
+  
+  // let appCount = 0;
+  // let oranCount = 0;
+  // apples.map(data => {
+  //      if((a + data) >= s && (a + data) <= t) appCount++;
+  // });
+  // oranges.map(data => {
+  //      if((b + data) >= s && (b + data) <= t) oranCount++;
+  // });
+  // console.log(appCount + "\n" + oranCount);
 }
