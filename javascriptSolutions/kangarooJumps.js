@@ -25,4 +25,13 @@ function kangaroo(x1, v1, x2, v2) {
        return "YES"
    }
    return "NO"
+
+   /* >>>>>>>>>>>>>>>>>>>>>>>>>>>> Lesson learnt and research
+   After solving the challenge. here are the weaknesses realized
+   While running tests, I couldn't tell the exact upper limit to use and it
+   kept changing with every test.
+   The function though functional was not effective and had a very poor big O notation of n2
+   To optimize my code and solution, I had to do more research and realized the use of 
+   division and remainder % saves alot of time. Here is the revised version.
+   */
 }
