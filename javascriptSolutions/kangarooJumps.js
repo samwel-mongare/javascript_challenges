@@ -34,4 +34,13 @@ function kangaroo(x1, v1, x2, v2) {
    To optimize my code and solution, I had to do more research and realized the use of 
    division and remainder % saves alot of time. Here is the revised version.
    */
+
+  const count = (x2 - x1)/(v1 - v2)
+  const soDu = (x2 -x1)% (v1-v2)
+  if  ( count> 0 && soDu === 0)
+  {
+      return "YES"
+  }else{
+      return "NO"
+  }
 }
