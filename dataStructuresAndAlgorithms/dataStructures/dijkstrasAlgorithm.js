@@ -11,6 +11,18 @@ class WeightedGraph {
     this.adjacencyList[vertex1].push({ node: vertex2, weight});
     this.adjacencyList[vertex2].push({ node: vertex1, weight});
   }
+
+  DijkstrasAlgorithm(start, finish) {
+    const node = new PriorityQueue;
+    const distances = {};
+    const previous = {};
+    const path = [];
+    let smallest;
+
+    for(let vertex in this.adjacencyList) {
+      console.log(vertex);
+    }
+  }
 }
 
 class PriorityQueue {
