@@ -20,7 +20,14 @@ class WeightedGraph {
     let smallest;
 
     for(let vertex in this.adjacencyList) {
-      console.log(vertex);
+      if(vertex === start) {
+        distances[vertex] = 0;
+        node.enqueue(vertex, 0);
+      } else {
+        distances[vertex] = Infinity;
+        node.enqueue(vertex, Infinity);
+      }
+      previous[vertex] = null;
     }
   }
 }
@@ -44,14 +51,16 @@ class PriorityQueue {
   }
 }
 
-// const graph = new WeightedGraph();
-// graph.addVertex("A");
-// graph.addVertex("B");
-// graph.addVertex("C");
-// graph.addVertex("D");
+const graph = new WeightedGraph();
+graph.addVertex("A");
+graph.addVertex("B");
+graph.addVertex("C");
+graph.addVertex("D");
 
-// graph.addEdge("A", "B", 3);
-// graph.addEdge("A", "C", 4);
-// graph.addEdge("B", "D", 2);
-// graph.addEdge("B", "C", 1);
-// graph.addEdge("C", "D", 1);
+graph.addEdge("A", "B", 3);
+graph.addEdge("A", "C", 4);
+graph.addEdge("B", "D", 3);
+graph.addEdge("B", "C", 1);
+graph.addEdge("C", "D", 1);
+
+graph.DijkstrasAlgorithm("A", "D");
