@@ -29,6 +29,22 @@ class WeightedGraph {
       }
       previous[vertex] = null;
     }
+
+    while(node.values.length) {
+      smallest = node.dequeue().val;
+      if(finish === smallest) {
+        console.log(smallest)
+      }
+
+      //Finding the next neighbor now
+      for(let neighbor in this.adjacencyList[smallest]) {
+        // This will give us the indexes according to the number of neighbors current smallest has
+        let nextNode = this.adjacencyList[smallest][neighbor];
+        let candidate = distances[smallest] + nextNode.weight;
+        let nextNeighbor = nextNode.node;
+        
+      }
+    }
   }
 }
 
