@@ -41,8 +41,18 @@ class WeightedGraph {
         // This will give us the indexes according to the number of neighbors current smallest has
         let nextNode = this.adjacencyList[smallest][neighbor];
         let candidate = distances[smallest] + nextNode.weight;
+        // nextNeighbor is the exact node. Like "B" contained in the nextNode.
+        // nextNode has a node and weight value as created in the weighted graph
         let nextNeighbor = nextNode.node;
         
+        if(candidate < distances[nextNeighbor]) {
+          // Update the distances object now
+          distances[nextNeighbor] = candidate;
+          // Update the previous table
+          previous[nextNeighbor] = smallest;
+          // Update the priority queue
+          node.enqueue(nextNeighbor, candidate);
+        }
       }
     }
   }
