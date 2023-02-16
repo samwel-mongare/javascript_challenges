@@ -33,7 +33,11 @@ class WeightedGraph {
     while(node.values.length) {
       smallest = node.dequeue().val;
       if(finish === smallest) {
-        console.log(smallest)
+        while(previous[smallest]) {
+          path.push(smallest);
+          previous[smallest] = smallest;
+        }
+        break;
       }
 
       //Finding the next neighbor now
