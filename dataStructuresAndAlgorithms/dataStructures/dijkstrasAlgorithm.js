@@ -58,6 +58,7 @@ class WeightedGraph {
           node.enqueue(nextNeighbor, candidate);
         }
       }
+      return path.concat(start).reverse();
     }
   }
 }
