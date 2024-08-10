@@ -40,3 +40,7 @@ class BankAccount {
     return alert("Please input a valid account Number!!!");
   };
 }
+
+alert(
+  "Welcome to our new bank bafu branch!!Wanna create an account? If so Click on the 'create account' button below"
+);
