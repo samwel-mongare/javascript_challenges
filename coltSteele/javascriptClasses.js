@@ -56,7 +56,7 @@ createAccount.onclick = () => {
   const balance = prompt("Please input your last bank balance");
 
   const newAccount = new BankAccount(accountHolder, accountNumber, balance);
-  console.log(newAccount);
-  newAccount.deposit();
-  newAccount.withdraw();
+  // console.log(newAccount);
+  // newAccount.deposit();
+  // newAccount.withdraw();
 };
