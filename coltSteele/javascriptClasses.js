@@ -44,3 +44,8 @@ class BankAccount {
 alert(
   "Welcome to our new bank bafu branch!!Wanna create an account? If so Click on the 'create account' button below"
 );
+
+const createAccount = document.body.appendChild(
+  document.createElement("button")
+);
+createAccount.innerText = "Create Account";
