@@ -58,5 +58,5 @@ createAccount.onclick = () => {
   const newAccount = new BankAccount(accountHolder, accountNumber, balance);
   console.log(newAccount);
   newAccount.deposit();
-  // newAccount.withdraw();
+  newAccount.withdraw();
 };
