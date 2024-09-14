@@ -6,6 +6,12 @@ class BankAccount {
     this.balance = balance ? balance : 0;
   }
 
+  welcomeMessage = () => {
+    return alert(
+      "Welcome to our new bank bafu branch!!Wanna create an account? If so Click on the 'create account' button below"
+    );
+  };
+
   deposit = () => {
     const accountToDeposit = prompt(
       `Please input the account number to deposit ${this.accountNumber}`
@@ -41,10 +47,6 @@ class BankAccount {
   };
 }
 
-alert(
-  "Welcome to our new bank bafu branch!!Wanna create an account? If so Click on the 'create account' button below"
-);
-
 const createAccount = document.body.appendChild(
   document.createElement("button")
 );
@@ -56,7 +58,4 @@ createAccount.onclick = () => {
   const balance = prompt("Please input your last bank balance");
 
   const newAccount = new BankAccount(accountHolder, accountNumber, balance);
-  // console.log(newAccount);
-  // newAccount.deposit();
-  // newAccount.withdraw();
 };
