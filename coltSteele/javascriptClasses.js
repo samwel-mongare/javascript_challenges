@@ -50,7 +50,7 @@ class BankAccount {
 const createAccount = document.body.appendChild(
   document.createElement("button")
 );
-createAccount.innerText = "Create Account";
+createAccount.innerText = "Visit Bank";
 
 createAccount.onclick = () => {
   const accountHolder = prompt("Please input your full name");
@@ -58,4 +58,5 @@ createAccount.onclick = () => {
   const balance = prompt("Please input your last bank balance");
 
   const newAccount = new BankAccount(accountHolder, accountNumber, balance);
+  newAccount.welcomeMessage();
 };
