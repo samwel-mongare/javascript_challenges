@@ -8,7 +8,7 @@ class BankAccount {
 
   welcomeMessage = () => {
     return alert(
-      "Welcome to our new bank bafu branch!!Wanna create an account? If so Click on the 'create account' button below"
+      "Welcome to our new bank bafu branch!!Wanna create an account? If so Click on the 'Ok' button to continue..."
     );
   };
 
@@ -53,10 +53,11 @@ const createAccount = document.body.appendChild(
 createAccount.innerText = "Visit Bank";
 
 createAccount.onclick = () => {
-  const accountHolder = prompt("Please input your full name");
-  const accountNumber = prompt("Please input an four digit account number");
-  const balance = prompt("Please input your last bank balance");
-
-  const newAccount = new BankAccount(accountHolder, accountNumber, balance);
+  const newAccount = new BankAccount();
   newAccount.welcomeMessage();
+  newAccount.accountHolder = prompt("Please input your full name");
+  newAccount.accountNumber = prompt(
+    "Please input an four digit account number"
+  );
+  newAccount.balance = prompt("Please input your last bank balance");
 };
