@@ -12,6 +12,12 @@ class BankAccount {
     );
   };
 
+  accountCreationSuccessMessage = () => {
+    return alert(
+      `Thank you for choosing us to handle your fincances. Your account has been successfully created. You new account number is ${this.accountNumber} and your account balance is ${this.balance}`
+    );
+  };
+
   deposit = () => {
     const accountToDeposit = prompt(
       `Please input the account number to deposit ${this.accountNumber}`
@@ -60,4 +66,5 @@ createAccount.onclick = () => {
     "Please input an four digit account number"
   );
   newAccount.balance = prompt("Please input your last bank balance");
+  newAccount.accountCreationSuccessMessage();
 };
