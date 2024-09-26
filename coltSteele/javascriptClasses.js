@@ -3,7 +3,7 @@ class BankAccount {
   Constructor(accountHolder, accountNumber, balance) {
     this.accountHolder = accountHolder;
     this.accountNumber = accountNumber;
-    this.balance = balance ? balance : 0;
+    this.balance = balance ? Number(balance) : 0;
   }
 
   welcomeMessage = () => {
@@ -14,18 +14,18 @@ class BankAccount {
 
   accountCreationSuccessMessage = () => {
     return alert(
-      `Thank you for choosing us to handle your fincances. Your account has been successfully created. You new account number is ${this.accountNumber} and your account balance is ${this.balance}`
+      `Thank you for choosing us to handle your fincances. Your account has been successfully created. You new account number is ${this.accountNumber} and your account balance is ${this.balance}. Would you like to make your first deposit?`
     );
   };
 
   deposit = () => {
     const accountToDeposit = prompt(
-      `Please input the account number to deposit ${this.accountNumber}`
+      `Please verify the account number to deposit`
     );
     const amount = prompt("Please input the amount to deposit");
 
     if (accountToDeposit === this.accountNumber) {
-      this.balance += amount;
+      this.balance += Number(amount);
       return alert(`You new account balance is Ksh.${this.balance}`);
     }
     return alert("Please input a valid account Number!!!");
@@ -65,6 +65,7 @@ createAccount.onclick = () => {
   newAccount.accountNumber = prompt(
     "Please input an four digit account number"
   );
-  newAccount.balance = prompt("Please input your last bank balance");
+  newAccount.balance = 0
   newAccount.accountCreationSuccessMessage();
+  newAccount.deposit();
 };
