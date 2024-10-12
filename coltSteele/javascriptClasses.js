@@ -22,13 +22,15 @@ class BankAccount {
     const accountToDeposit = prompt(
       `Please verify the account number to deposit`
     );
-    const amount = prompt("Please input the amount to deposit");
+    const amount = amount ? amount : prompt("Please input the amount to deposit");
 
     if (accountToDeposit === this.accountNumber) {
       this.balance += Number(amount);
       return alert(`You new account balance is Ksh.${this.balance}`);
+    } else if (accountToDeposit !== this.accountNumber) {
+      alert("Please input a valid account Number!!!");
+      return this.deposit(amount);
     }
-    return alert("Please input a valid account Number!!!");
   };
 
   withdraw = () => {
@@ -65,7 +67,7 @@ createAccount.onclick = () => {
   newAccount.accountNumber = prompt(
     "Please input an four digit account number"
   );
-  newAccount.balance = 0
+  newAccount.balance = 0;
   newAccount.accountCreationSuccessMessage();
   newAccount.deposit();
 };
