@@ -22,7 +22,7 @@ class BankAccount {
     const accountToDeposit = prompt(
       `Please verify the account number to deposit`
     );
-    const amount = amount ? amount : prompt("Please input the amount to deposit");
+    const amount = prompt("Please input the amount to deposit");
 
     if (accountToDeposit === this.accountNumber) {
       this.balance += Number(amount);
